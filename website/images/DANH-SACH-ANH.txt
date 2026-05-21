@@ -1,0 +1,9 @@
+ẢNH BẮT BUỘC (website đang dùng)
+-------------------------------
+logo.jpg
+gallery-1.jpg, gallery-2.jpg, gallery-3.jpg
+about-1.jpg, about-2.jpg
+
+ẢNH DỰ PHÒNG (không dùng trong code — có thể không upload)
+---------------------------------------------------------
+z7842193*.jpg

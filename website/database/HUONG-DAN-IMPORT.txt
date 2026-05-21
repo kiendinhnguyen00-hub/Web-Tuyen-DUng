@@ -1,0 +1,43 @@
+HƯỚNG DẪN IMPORT DATABASE LÊN HOST
+==================================
+
+File SQL: database/ankhang.sql
+
+BƯỚC 1 — Tạo database trên cPanel
+---------------------------------
+- Vào MySQL Databases
+- Tạo database mới (ghi lại tên đầy đủ, vd: cpanel_ankhang)
+- Tạo user MySQL + mật khẩu mạnh
+- Add user vào database → chọn ALL PRIVILEGES
+
+BƯỚC 2 — Import file SQL
+--------------------------
+- Mở phpMyAdmin → chọn database vừa tạo
+- Tab Import → chọn ankhang.sql → Go
+- Nếu báo lỗi CREATE DATABASE: mở file .sql, comment/xóa 2 dòng CREATE DATABASE và USE,
+  import lại khi đã chọn đúng database trong phpMyAdmin
+
+BƯỚC 3 — Cấu hình PHP (form lưu vào DB)
+---------------------------------------
+- Copy database/config.example.php → database/config.php
+- Sửa db_name, db_user, db_pass theo host
+- Upload cả thư mục api/ và database/ (có db.php, config.php)
+- Form trên index.html đã trỏ: api/submit_contact.php
+
+BƯỚC 4 — Kiểm tra
+------------------
+- Gửi thử form trên website
+- Vào phpMyAdmin → bảng contact_requests → xem dòng mới
+
+BẢNG ĐÃ TẠO
+-----------
+- contact_requests  → lưu form liên hệ (họ tên, SĐT, email, nhu cầu, nội dung)
+- job_posts         → tin tuyển dụng (mở rộng sau)
+- site_settings     → hotline, tên site
+- admin_users       → tài khoản quản trị (tạo sau bằng PHP, chưa có user mẫu)
+
+LƯU Ý BẢO MẬT
+-------------
+- Không dùng mật khẩu mặc định; tạo admin bằng password_hash() trên host
+- Host cần hỗ trợ PHP 8+ và PDO MySQL
+- File database/config.php chứa mật khẩu — không chia sẻ công khai

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sau khi có tên miền, sửa dòng Sitemap thành https://tuyendungankhang.com/sitemap.xml
+Sitemap: https://tuyendungankhang.com/sitemap.xml

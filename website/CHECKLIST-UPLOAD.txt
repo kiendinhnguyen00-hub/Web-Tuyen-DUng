@@ -1,0 +1,23 @@
+CHECKLIST UPLOAD HOST — Tuyển Dụng An Khang
+==========================================
+
+TRƯỚC KHI UP
+[ ] Sửa database/config.php (db_name, db_user, db_pass)
+[ ] Import database/ankhang.sql vào phpMyAdmin
+[ ] (Tuỳ chọn) Xóa ảnh z7842193*.jpg nếu muốn upload nhẹ hơn
+
+UPLOAD VÀO public_html
+[ ] index.html
+[ ] 404.html, .htaccess, robots.txt, sitemap.xml
+[ ] thư mục api/
+[ ] thư mục database/ (config.php + db.php + .htaccess)
+[ ] thư mục images/ (logo, gallery 1-3, about 1-2)
+
+SAU KHI UP
+[ ] Bật SSL (HTTPS)
+[ ] Sửa robots.txt + sitemap.xml (tên miền)
+[ ] Test trang chủ + ảnh
+[ ] Test form liên hệ
+[ ] Xem bảng contact_requests trong phpMyAdmin
+
+ĐỌC THÊM: README-HUONG-DAN-UP-HOST.md

@@ -1,0 +1,852 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuyển Dụng An Khang | Tuyển dụng KCN Hà Nam</title>
+  <meta name="description" content="Tuyển Dụng An Khang - Tư vấn tuyển dụng lao động tại khu công nghiệp Hà Nam và vùng phụ cận." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0d6efd" />
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="images/logo.jpg" />
+  <!-- Sau khi có tên miền: sửa content trong og:url và og:image thành link đầy đủ https://... -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:title" content="Tuyển Dụng An Khang | Tuyển dụng KCN Hà Nam" />
+  <meta property="og:description" content="Tư vấn tuyển dụng lao động tại khu công nghiệp Hà Nam và vùng phụ cận. Hotline 0345 297 862." />
+  <meta property="og:image" content="images/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #0a58ca;
+      --accent: #14b8a6;
+      --accent-soft: rgba(20, 184, 166, 0.15);
+      --gold: #f59e0b;
+      --text: #0f172a;
+      --text-soft: #475569;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+      --shadow: 0 12px 40px rgba(15, 23, 42, 0.1);
+      --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.14);
+      --font: "Be Vietnam Pro", system-ui, sans-serif;
+      --header-h: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      line-height: 1.7;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--primary-dark); }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      height: var(--header-h);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: var(--shadow-sm); }
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .brand img { height: 44px; width: auto; }
+    .brand span { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-link {
+      display: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+    .nav-link:hover { color: var(--primary); }
+    @media (min-width: 768px) { .nav-link { display: inline-block; } }
+    .btn-call-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.15rem;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(13, 110, 253, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-call-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(13, 110, 253, 0.4);
+      color: #fff !important;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      margin-top: var(--header-h);
+      padding: 4rem 0 5rem;
+      overflow: hidden;
+      background: linear-gradient(145deg, #0f172a 0%, #1e3a5f 45%, #0d4f6e 100%);
+      color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(13, 110, 253, 0.3) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 640px; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.9rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(8px);
+    }
+    .hero-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+    .hero h1 {
+      font-size: clamp(1.85rem, 5vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, #5eead4, #93c5fd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 1.75rem;
+      max-width: 520px;
+    }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      background: linear-gradient(135deg, var(--accent), #0d9488);
+      color: #fff !important;
+      font-weight: 700;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(20, 184, 166, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(20, 184, 166, 0.5);
+      color: #fff !important;
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      color: #fff !important;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.6);
+      color: #fff !important;
+    }
+
+    /* Stats */
+    .stats-bar {
+      margin-top: -2.5rem;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 2.5rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+    .stat-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .stat-card span { font-size: 0.85rem; color: var(--text-soft); font-weight: 500; }
+
+    /* Gallery */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+    .section-sub { color: var(--text-soft); font-size: 0.95rem; margin-bottom: 1.25rem; }
+    .gallery {
+      display: grid;
+      gap: 0.65rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    @media (min-width: 768px) {
+      .gallery {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        min-height: 380px;
+      }
+      .gallery .main { grid-row: 1 / 3; }
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      min-height: 180px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: inherit;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.35), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .gallery-item:hover::after { opacity: 1; }
+
+    /* Main layout */
+    .main-grid {
+      display: grid;
+      gap: 2rem;
+      padding-bottom: 4rem;
+    }
+    @media (min-width: 992px) {
+      .main-grid {
+        grid-template-columns: 1fr 380px;
+        align-items: start;
+      }
+      .sidebar { position: sticky; top: calc(var(--header-h) + 1rem); }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.3s;
+    }
+    .card:hover { box-shadow: var(--shadow); }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .card-icon.blue { background: rgba(13, 110, 253, 0.12); }
+    .card-icon.teal { background: var(--accent-soft); }
+    .card-icon.amber { background: rgba(245, 158, 11, 0.15); }
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .overview-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+    @media (min-width: 560px) { .overview-grid { grid-template-columns: 1fr 1fr; } }
+    .overview-item {
+      padding: 1rem 1.1rem;
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .overview-item:hover {
+      border-color: rgba(13, 110, 253, 0.3);
+      background: #fff;
+    }
+    .overview-item strong {
+      display: block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-soft);
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+    .overview-item span, .overview-item a { font-weight: 600; font-size: 0.95rem; }
+
+    /* Article */
+    .steps {
+      display: grid;
+      gap: 1rem;
+      margin: 1.25rem 0;
+    }
+    @media (min-width: 640px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+    .step {
+      padding: 1.15rem;
+      border-radius: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .step-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(13, 110, 253, 0.15);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .step p { font-size: 0.85rem; color: var(--text-soft); margin: 0; }
+
+    .article h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin: 1.5rem 0 0.65rem;
+      color: var(--text);
+    }
+    .article p { color: var(--text-soft); margin-bottom: 1rem; }
+    .article-figure {
+      margin: 1.25rem 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .article-figure figcaption {
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      background: var(--bg);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .pill {
+      padding: 0.35rem 0.85rem;
+      background: var(--accent-soft);
+      color: #0f766e;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 999px;
+    }
+
+    /* Contact */
+    .contact-card {
+      background: linear-gradient(160deg, #fff 0%, #f0f9ff 100%);
+      border: 1px solid rgba(13, 110, 253, 0.15);
+      box-shadow: var(--shadow-lg);
+    }
+    .phone-big {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1.1rem;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: #fff !important;
+      font-size: 1.2rem;
+      font-weight: 800;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(13, 110, 253, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .phone-big:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 28px rgba(13, 110, 253, 0.45);
+      color: #fff !important;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font: inherit;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+    }
+    .form-group textarea { min-height: 96px; resize: vertical; }
+    .btn-submit {
+      width: 100%;
+      padding: 0.95rem;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(13, 110, 253, 0.35);
+    }
+    .form-note { font-size: 0.78rem; color: var(--text-soft); margin-top: 0.75rem; }
+    .form-alert {
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .form-alert.visible { display: block; }
+    .form-alert.success {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+    .form-alert.error {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+    .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    /* Floating call */
+    .fab-call {
+      position: fixed;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.2rem;
+      background: linear-gradient(135deg, #059669, #14b8a6);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 28px rgba(5, 150, 105, 0.45);
+      animation: fab-bounce 3s ease-in-out infinite;
+    }
+    .fab-call:hover { color: #fff !important; transform: scale(1.05); }
+    @keyframes fab-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @media (min-width: 992px) { .fab-call { display: none; } }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, #0f172a, #1e293b);
+      color: #94a3b8;
+      padding: 2.5rem 0;
+    }
+    footer .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.75rem;
+    }
+    footer strong { color: #fff; font-size: 1.1rem; }
+    footer a { color: #5eead4; font-weight: 600; }
+    footer a:hover { color: #99f6e4; }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery-section { margin-bottom: 2.5rem; }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img id="logo-img" src="images/logo.jpg" alt="Logo An Khang" width="44" height="44" />
+        <span>Tuyển Dụng An Khang</span>
+      </a>
+      <div class="header-actions">
+        <a href="#lien-he" class="nav-link">Liên hệ</a>
+        <a href="#dich-vu" class="nav-link">Dịch vụ</a>
+        <a class="btn-call-header" href="tel:+84345297862">📞 0345 297 862</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="hero-badge">Hotline tư vấn · Hà Nam & vùng lân cận</div>
+        <h1>Tuyển dụng <em>An Khang</em> — Việc làm KCN uy tín</h1>
+        <p class="hero-desc">
+          Kết nối ứng viên với doanh nghiệp tại khu công nghiệp Hà Nam. Tư vấn miễn phí, minh bạch lương &amp; chế độ — hỗ trợ từ hồ sơ đến khi nhận việc.
+        </p>
+        <div class="hero-cta">
+          <a class="btn-primary" href="tel:+84345297862">Gọi ngay 0345 297 862</a>
+          <a class="btn-outline" href="#lien-he">Đăng ký tư vấn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container stats-bar reveal">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <strong>Miễn phí</strong>
+        <span>Tư vấn ứng viên</span>
+      </div>
+      <div class="stat-card">
+        <strong>Hà Nam</strong>
+        <span>Khu vực hoạt động chính</span>
+      </div>
+      <div class="stat-card">
+        <strong>24/7</strong>
+        <span>Tiếp nhận liên hệ</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container gallery-section reveal">
+    <h2 class="section-title">Hình ảnh hoạt động</h2>
+    <p class="section-sub">Một số hình ảnh hoạt động tuyển dụng tại khu công nghiệp Hà Nam và vùng phụ cận.</p>
+    <div class="gallery">
+      <div class="gallery-item main">
+        <img id="gallery-1" src="images/gallery-1.jpg" alt="Ảnh hoạt động 1" loading="lazy" decoding="async" />
+      </div>
+      <div class="gallery-item">
+        <img id="gallery-2" src="images/gallery-2.jpg" alt="Ảnh hoạt động 2" loading="lazy" decoding="async" />
+      </div>
+      <div class="gallery-item">
+        <img id="gallery-3" src="images/gallery-3.jpg" alt="Ảnh hoạt động 3" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </div>
+
+  <div class="container main-grid">
+    <main>
+      <section class="card reveal" id="tong-quan">
+        <div class="card-header">
+          <div class="card-icon blue">📋</div>
+          <h2>Tổng quan</h2>
+        </div>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <strong>Đơn vị</strong>
+            <span>Tuyển Dụng An Khang</span>
+          </div>
+          <div class="overview-item">
+            <strong>Hotline</strong>
+            <a href="tel:+84345297862">0345 297 862</a>
+          </div>
+          <div class="overview-item">
+            <strong>Lĩnh vực</strong>
+            <span>Công nhân · Kỹ thuật · Văn phòng KCN</span>
+          </div>
+          <div class="overview-item">
+            <strong>Khu vực</strong>
+            <span>Hà Nam và vùng phụ cận</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card article reveal" id="dich-vu">
+        <div class="card-header">
+          <div class="card-icon teal">🏭</div>
+          <h2>Giới thiệu dịch vụ</h2>
+        </div>
+        <p>
+          <strong>Tuyển Dụng An Khang</strong> chuyên tư vấn và giới thiệu lao động cho nhà máy,
+          xưởng sản xuất trong khu công nghiệp — nhanh chóng, minh bạch, đồng hành cùng ứng viên.
+        </p>
+        <div class="pill-list">
+          <span class="pill">Công nhân SX</span>
+          <span class="pill">QA / QC</span>
+          <span class="pill">Kỹ thuật</span>
+          <span class="pill">Bảo trì</span>
+          <span class="pill">Văn phòng</span>
+        </div>
+
+        <h3>Quy trình 4 bước</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h4>Liên hệ</h4>
+            <p>Gọi hotline hoặc gửi form</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h4>Tư vấn</h4>
+            <p>Chọn vị trí phù hợp</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h4>Phỏng vấn</h4>
+            <p>Hỗ trợ hồ sơ &amp; lịch PV</p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h4>Nhận việc</h4>
+            <p>Vào làm &amp; theo dõi</p>
+          </div>
+        </div>
+
+        <h3>Tuyển dụng tại KCN Hà Nam</h3>
+        <p>
+          Hợp tác doanh nghiệp trong các khu công nghiệp trên địa bàn Hà Nam. Mọi thắc mắc:
+          <a href="tel:+84345297862"><strong>0345 297 862</strong></a>.
+        </p>
+        <div id="inline-images">
+          <figure class="article-figure">
+            <img id="about-1" src="images/about-1.jpg" alt="Hỗ trợ ứng viên tại khu công nghiệp Hà Nam" loading="lazy" decoding="async" />
+            <figcaption id="caption-about-1">Hỗ trợ ứng viên tại khu công nghiệp Hà Nam</figcaption>
+          </figure>
+          <figure class="article-figure">
+            <img id="about-2" src="images/about-2.jpg" alt="Kết nối doanh nghiệp và người lao động" loading="lazy" decoding="async" />
+            <figcaption id="caption-about-2">Kết nối doanh nghiệp và người lao động</figcaption>
+          </figure>
+        </div>
+
+        <h3>Cam kết</h3>
+        <p>Tư vấn miễn phí · Thông tin lương rõ ràng · Bảo mật dữ liệu cá nhân.</p>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <section class="card contact-card reveal" id="lien-he">
+        <div class="card-header">
+          <div class="card-icon amber">✉️</div>
+          <h2>Liên hệ</h2>
+        </div>
+        <a class="phone-big" href="tel:+84345297862">📞 0345 297 862</a>
+        <div id="form-alert" class="form-alert" role="status" aria-live="polite"></div>
+        <form action="api/submit_contact.php" method="POST" id="contact-form" novalidate>
+          <div class="hp-field" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="name">Họ và tên *</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Số điện thoại *</label>
+            <input id="phone" name="phone" type="tel" required placeholder="0345..." />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" />
+          </div>
+          <div class="form-group">
+            <label for="interest">Nhu cầu</label>
+            <select id="interest" name="interest">
+              <option value="cong-nhan">Tuyển công nhân</option>
+              <option value="ky-thuat">Tuyển kỹ thuật</option>
+              <option value="van-phong">Tuyển văn phòng</option>
+              <option value="doanh-nghiep">Doanh nghiệp cần tuyển</option>
+              <option value="khac">Khác</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Nội dung *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Gửi yêu cầu tư vấn</button>
+          <p class="form-note">Chúng tôi sẽ gọi lại trong thời gian sớm nhất.</p>
+        </form>
+      </section>
+    </aside>
+  </div>
+
+  <a class="fab-call" href="tel:+84345297862" aria-label="Gọi điện">📞 Gọi ngay</a>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <strong>Tuyển Dụng An Khang</strong>
+      <p>Hotline: <a href="tel:+84345297862">0345 297 862</a> · Hà Nam &amp; vùng phụ cận</p>
+      <p>© 2026 Tuyển Dụng An Khang</p>
+    </div>
+  </footer>
+
+  <script>
+  // Header shadow on scroll
+  const header = document.getElementById("header");
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) e.target.classList.add("visible");
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  reveals.forEach((el) => observer.observe(el));
+
+  // Thông báo sau khi gửi form (api/submit_contact.php)
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const alertEl = document.getElementById("form-alert");
+    if (!alertEl) return;
+
+    const messages = {
+      sent: { type: "success", text: "Đã gửi yêu cầu thành công. Chúng tôi sẽ gọi lại sớm nhất!" },
+      name: { type: "error", text: "Vui lòng nhập họ tên hợp lệ." },
+      phone: { type: "error", text: "Vui lòng nhập số điện thoại hợp lệ (ít nhất 9 số)." },
+      email: { type: "error", text: "Email không hợp lệ." },
+      message: { type: "error", text: "Vui lòng nhập nội dung liên hệ." },
+      rate: { type: "error", text: "Bạn đã gửi quá nhiều lần. Vui lòng gọi hotline 0345 297 862 hoặc thử lại sau 1 giờ." },
+      server: { type: "error", text: "Không gửi được. Kiểm tra cấu hình database/config.php hoặc thử lại sau." }
+    };
+
+    let info = null;
+    if (params.get("sent") === "1") info = messages.sent;
+    else if (params.has("error")) info = messages[params.get("error")] || messages.server;
+
+    if (!info) return;
+
+    alertEl.textContent = info.text;
+    alertEl.classList.add("visible", info.type);
+    alertEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+
+    if (history.replaceState) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete("sent");
+      url.searchParams.delete("error");
+      history.replaceState(null, "", url.pathname + url.hash);
+    }
+  })();
+  </script>
+</body>
+</html>
